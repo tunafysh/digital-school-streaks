@@ -1,45 +1,55 @@
 "use client"
-import { HamburgerMenuIcon } from "@radix-ui/react-icons";
-import { Sidebar, SidebarHeader, SidebarContent, SidebarFooter, useSidebar } from "../ui/sidebar";
+import { Sidebar, SidebarHeader, SidebarContent, SidebarFooter } from "../ui/sidebar";
 import { ModeToggle } from "./themetoggle";
-import { useState } from "react";
+import { GitCommitHorizontalIcon } from "lucide-react";
+import { NavMain } from "./nav-main";
+import { Avatar, AvatarFallback } from "../ui/avatar";
 
-export default function AppSidebar() {
-    const [isPinned, setIsPinned] = useState(true);
-    const {
-        state,
-        open,
-        setOpen,
-        openMobile,
-        setOpenMobile,
-        isMobile,
-        toggleSidebar,
-      } = useSidebar()
-    
+export default function AppSidebar() {    
+      const data = {
+        navMain: [
+            {
+              title: "Pipelines",
+              url: "#",
+              icon: GitCommitHorizontalIcon,
+              isActive: true,
+              items: [
+                {
+                  title: "History",
+                  url: "#",
+                },
+                {
+                  title: "Starred",
+                  url: "#",
+                },
+                {
+                  title: "Settings",
+                  url: "#",
+                },
+              ],
+        
+      }
+    ]}
+
     return (
-        <Sidebar variant={isPinned ? "sidebar" : "floating"}>
+        <Sidebar>
             <SidebarHeader>
-            <button onClick={() => {
-                    setIsPinned(!isPinned);
-                    toggleSidebar()
-                }}>
-                    <HamburgerMenuIcon className="h-6 w-6" />
-                </button>
                 <div className="flex flex-row justify-center">
                     <h1 className="text-2xl font-bold">Menu</h1>
                 </div>
             </SidebarHeader>
             <SidebarContent>
-                <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Services</li>
-                    <li>Contact</li>
-                </ul>
+                <NavMain items={data.navMain} />
             </SidebarContent>
             <SidebarFooter>
-                <div className="flex flex-row justify-between bg-background p-4 rounded-md">
-                    <p>Dark Mode</p>
+                <div className="flex flex-row justify-between dark:bg-[#FFFFFF0F] bg-[#00000009] p-4 rounded-md">
+                    <Avatar className="">
+                        <AvatarFallback>AS</AvatarFallback>
+                    </Avatar>
+                    <div >
+                    <h1>Anesa Salihu</h1>
+                    <p className="text-xs">anesasalihu@gmail.com</p>
+                    </div>
                     <ModeToggle />
                 </div>
             </SidebarFooter>
