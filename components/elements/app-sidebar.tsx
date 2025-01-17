@@ -32,27 +32,27 @@ export default function AppSidebar() {
     ]}
 
     return (
-        <Sidebar>
-            <SidebarHeader>
-                <div className="flex flex-row justify-center">
-                    <h1 className="text-2xl font-bold">Menu</h1>
-                </div>
-            </SidebarHeader>
-            <SidebarContent>
-                <NavMain items={data.navMain} />
-            </SidebarContent>
-            <SidebarFooter>
-                <div className="flex flex-row justify-between dark:bg-[#FFFFFF0F] bg-[#00000009] p-4 rounded-md">
-                    <Avatar className="">
-                        <AvatarFallback>AS</AvatarFallback>
-                    </Avatar>
-                    <div >
-                    <h1>Anesa Salihu</h1>
-                    <p className="text-xs">anesasalihu@gmail.com</p>
-                    </div>
-                    <ModeToggle />
-                </div>
-            </SidebarFooter>
-        </Sidebar>
+      <Sidebar variant="floating" className="mt-12 h-[calc()]">
+      <SidebarHeader>
+          <div className="flex flex-row justify-center">
+              <h1 className="text-2xl font-bold">Menu</h1>
+          </div>
+      </SidebarHeader>
+      <SidebarContent>
+          <NavMain items={data.navMain} />
+      </SidebarContent>
+      <SidebarFooter>
+          <div className="flex flex-row justify-between dark:bg-[#FFFFFF0F] bg-[#00000009] p-1 rounded-md">
+              <Avatar className="">
+                  <AvatarFallback>AS</AvatarFallback>
+              </Avatar>
+              <div >
+              <h1>Anesa Salihu</h1>
+              <p className="text-xs">anesasalihu@gmail.com</p>
+              </div>
+              <ModeToggle />
+          </div>
+      </SidebarFooter>
+  </Sidebar>
     )
 }

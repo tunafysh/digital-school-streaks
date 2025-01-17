@@ -15,7 +15,9 @@
       {
         "title": "streaks",
         "width": 800,
-        "height": 600
+        "height": 450,
+        "decorations": false,
+        "fullscreen": false
       }
     ],
     "security": {

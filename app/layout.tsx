@@ -2,7 +2,6 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SidebarProvider } from "@/components/ui/sidebar";
-import AppSidebar from "@/components/elements/app-sidebar";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -29,7 +28,6 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <SidebarProvider>
-              <AppSidebar />
               {children}
             </SidebarProvider>
           </ThemeProvider>
