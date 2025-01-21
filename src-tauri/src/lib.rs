@@ -12,7 +12,6 @@ fn minimize(window: tauri::Window) {
     window.minimize().unwrap();
 }
 
-
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     db::init();
